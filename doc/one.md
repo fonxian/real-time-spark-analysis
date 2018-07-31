@@ -2,7 +2,7 @@
 
 ## 一、预处理数据
 
-#### Scala读取csv
+#### 1、Scala读取csv
 
 ```scala
 	
@@ -17,3 +17,32 @@
 
 
 ```
+
+#### 2、将记录保存为json
+
+```scala
+
+
+```
+
+
+
+#### 3、异常记录
+
+(1) No serializer found for class scala.runtime.BoxedUnit and no properties discovered to create BeanSerializer
+
+```scala
+
+map(mapper.writeValueAsString(_))
+
+```
+
+改为
+
+```scala
+
+map(x => mapper.writeValueAsString(_))
+
+```
+
+
