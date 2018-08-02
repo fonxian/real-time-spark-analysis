@@ -1,10 +1,10 @@
+package preprocessing
+
 import java.io.{IOException, StringReader}
 
 import au.com.bytecode.opencsv.CSVReader
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.spark.{SparkConf, SparkContext}
-import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
-import scala.util.parsing.json._
 
 
 /**
@@ -41,10 +41,19 @@ object process {
       }
 
     }).map( x =>{
+//      val c = new Click1("1212","dfff",2323,"dfff")
       val mapper = new ObjectMapper()
-      mapper.writeValueAsString(_)
+//      val z = List(1,2,3,4)
+      val s = x.asInstanceOf[Click1]
+      val y = mapper.writeValueAsString(s)
+      println(y)
     }
-    ).saveAsTextFile("/Users/fangzhijie/Github/dgjq项目/scalaspark/data/json123")
+    ).count()
+
+      //.saveAsTextFile("json123")
+
+
+    //saveAsTextFile("/Users/fangzhijie/Github/dgjq项目/scalaspark/data/json123")
 
   }
 
