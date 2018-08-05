@@ -1,8 +1,9 @@
+package preprocessing
+
 /**
   * Created by fangzhijie on 2018/7/17.
   */
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf, SparkContext}
 
 
 object test {
